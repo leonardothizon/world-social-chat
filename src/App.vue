@@ -1,30 +1,34 @@
 <template>
-  <!-- <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div> -->
-  <router-view />
+  <Header />
+  <div class="app-content rounded-3xl">
+    <router-view />
+  </div>
+  <BottomMenu class="lg:hidden" />
 </template>
 
+<script setup lang="ts">
+
+import Header from '@/components/Header.vue';
+import BottomMenu from '@/components/BottomMenu.vue';
+
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+:root {
+  --purple: #30336B;
+  --purple-dark: #130F40;
+  --white: #FFFFFF;
+  --gray: #535C68;
+};
+body {
+  background-color: var(--purple);
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+.app-content {
+  background-color: #FFF;
+  height: calc(100vh - 8.5rem);
+  overflow-y: auto;
+  @media (min-width: 1024px) {
+    height: calc(100vh - 6rem);
   }
 }
 </style>

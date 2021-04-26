@@ -5,20 +5,29 @@ const usePlaces = function(): any {
     const places: Place[] = [
         {
           code: 'NY',
-          name: 'New York'
+          name: 'New York',
+          img: '/img/places/ny.jpg',
         },
         {
           code: 'RJ',
-          name: 'Rio de Janeiro'
+          name: 'Rio de Janeiro',
+          img: '/img/places/rio.jpg',
         },
         {
           code: 'LD',
-          name: 'London'
+          name: 'London',
+          img: '/img/places/london.jpg',
         },
         {
           code: 'PR',
-          name: 'Paris'
-        }
+          name: 'Paris',
+          img: '/img/places/paris.jpeg',
+        },
+        {
+          code: 'AM',
+          name: 'Amsterdam',
+          img: '/img/places/amsterdam.jpg',
+        },
       ];
 
       return { places };

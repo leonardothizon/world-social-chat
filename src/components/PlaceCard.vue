@@ -2,20 +2,24 @@
   <div
     class="place-card lg:shadow-md lg:hover:shadow-lg flex items-center lg:border lg:border-gray rounded-2xl p-6 lg:w-5/11 xl:w-32% cursor-pointer"
   >
-    <img
-      :src="place.img"
-      alt="Rio de Janeiro"
-      class="rounded-full w-16 h-16 lg:w-32 lg:h-32 object-cover"
-    />
+    <div class="flex flex-col justify-center">
+      <img
+        :src="place.img"
+        alt="Rio de Janeiro"
+        class="rounded-full w-16 h-16 lg:w-32 lg:h-32 object-cover"
+      />
+      <span class="counter hidden lg:block text-center mt-2 text-sm">3 online</span>
+    </div>
     <div
       class="content ml-4 flex flex-col flex-1 content-between justify-around"
     >
       <div class="flex content-between">
         <h3 class="place-name flex-1 text-lg font-bold">{{ place.name }}</h3>
-        <span class="counter">3 online</span>
+        <span class="counter text-sm lg:hidden">3 online</span>
       </div>
-      <p class="place-last-message">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit in a non
+      <p class="place-last-message line-clamp-2 lg:line-clamp-3 mt-2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit in a non Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit in a non
       </p>
     </div>
   </div>
@@ -44,7 +48,7 @@ export default defineComponent({
     &:after {
       content: '';
       height: 3px;
-      border-top: 1px solid #DDD;
+      border-top: 1px solid #ddd;
       // width: 50%;
       position: absolute;
       bottom: -1rem;

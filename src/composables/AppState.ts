@@ -1,6 +1,7 @@
+import { ref } from 'vue';
 import Place from '@/types/Place';
 
-const usePlaces = function (): any {
+export const useAppState = function (): any {
   const places: Place[] = [
     {
       code: 'NY',
@@ -21,7 +22,7 @@ const usePlaces = function (): any {
       code: 'PR',
       name: 'Paris',
       img: '/img/places/paris.jpeg',
-      map: 'img/maps/paris-map.jpg',
+      map: 'img/maps/paris-map.jpg'
     },
     {
       code: 'AM',
@@ -30,7 +31,13 @@ const usePlaces = function (): any {
     }
   ];
 
-  return { places };
+  const appTitle = ref('World Chat');
+
+  const setAppTitle = (value: string) => {
+    appTitle.value = value;
+  }
+
+  return { appTitle, setAppTitle, places };
 };
 
-export default usePlaces;
+export default useAppState;

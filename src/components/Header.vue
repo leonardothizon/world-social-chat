@@ -7,8 +7,10 @@
         class="rounded-full w-12 h-12 object-cover"
       />
     </div>
-    <h1 class="lg:ml-4 flex-1 lg:flex-grow-1 lg:max-w-32 text-center lg:text-left text-3xl text-white">
-      {{ appTitle }}
+    <h1
+      class="lg:ml-4 flex-1 lg:flex-grow-1 lg:max-w-32 text-center lg:text-left text-3xl text-white"
+    >
+      {{ title }}
     </h1>
     <nav class="hidden justify-between lg:justify-around w-1/2 lg:flex">
       <NavItems />
@@ -31,8 +33,13 @@
 </template>
 
 <script setup lang="ts">
-
 import NavItems from '@/components/NavItems.vue';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 
-const appTitle = 'World Social Chat';
+const store = useStore();
+
+const title = computed(() => store.state.appTitle);
+
+
 </script>

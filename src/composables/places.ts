@@ -10,7 +10,10 @@ const usePlaces = function (): any {
     {
       code: 'RJ',
       name: 'Rio de Janeiro',
-      img: '/img/places/rio.jpg'
+      img: '/img/places/rio.jpg',
+      map: 'img/maps/rio-map.jpeg',
+      mapWidth: 2561,
+      mapHeight: 1903,
     },
     {
       code: 'LD',
@@ -22,6 +25,8 @@ const usePlaces = function (): any {
       name: 'Paris',
       img: '/img/places/paris.jpeg',
       map: 'img/maps/paris-map.jpg',
+      mapWidth: 2199,
+      mapHeight: 1415,
     },
     {
       code: 'AM',

@@ -1,17 +1,17 @@
 <template>
   <div
     :class="{ 'current-user': isCurrentUser }"
-    class="user-profile-image cursor-pointer relative"
+    class="user-profile-image cursor-pointer absolute"    
     ref="userEl"
   >
     <img
       :src="user.img"
-      alt="User Image"
+      alt="User Image"      
       class="rounded-full w-12 h-12 object-cover border-4 border-gray-300"
     />
     <transition name="fade">
       <p
-        class="user-message absolute bg-gray-100 text-purple-800 p-2 rounded flex flex-col gap-1"
+        class="user-message absolute bg-gray-100 text-purple-800 p-2 rounded flex flex-col gap-1 w-48"
         :class="messagePosition"
         v-if="messageToDisplay"
       >

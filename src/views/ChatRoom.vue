@@ -1,11 +1,11 @@
 <template>
   <section v-if="placeName" class="h-full w-full relative overflow-hidden">
-    <div style="width: 2000px; height: 1415px" ref="mapEl" class="relative">
+    <div :style="mapSize" ref="mapEl" class="relative">
       <img
         :src="backgroundImage"
         alt="Place Map"
         class="object-none absolute"
-        style="width: 2000px; height: 1415px"
+        :style="mapSize"
         ondragstart="return false"
       />
       <UserMark
@@ -16,7 +16,9 @@
         :isCurrentUser="user.id === currentUserId"
       />
     </div>
-    <div class="flex gap-2 items-center fixed bottom-20 w-full px-4 outline-none">
+    <div
+      class="flex gap-2 items-center fixed bottom-16 lg:bottom-8 w-full px-4 outline-none"
+    >
       <input
         type="text"
         placeholder="type your message"
@@ -115,9 +117,21 @@ export default defineComponent({
     });
 
     const backgroundImage = ref('img/maps/default-map.jpeg');
-    backgroundImage.value =
-      places.find((place) => place.code === placeCode.value)?.map ||
-      'img/maps/default-map.jpeg';
+    let mapSize = reactive({
+      width: 1920 + 'px',
+      height: 1080 + 'px'
+    });
+    const place = places.find((place) => place.code === placeCode.value);
+    if (place?.map) {
+      backgroundImage.value = place?.map;
+      mapSize = {
+        width: place.mapWidth + 'px',
+        height: place.mapHeight + 'px',
+      };
+    }
+    // backgroundImage.value =
+    //   places.find((place) => place.code === placeCode.value)?.map ||
+    //   'img/maps/default-map.jpeg';
 
     const setPlaceName = function (placeCode: string): void {
       placeName.value =
@@ -149,6 +163,7 @@ export default defineComponent({
       message,
       placeName,
       backgroundImage,
+      mapSize,
       mapEl,
       sendMessage
     };

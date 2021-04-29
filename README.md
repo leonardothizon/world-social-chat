@@ -1,6 +1,6 @@
-# world-social-chat
+# World Social Chat
 
-A simple webchat project that uses Vue 3 Composition API and Tailwind CSS.
+A concept of webchat project that uses Vue 3 Composition API and Tailwind CSS.
 
 ## Project setup
 ```

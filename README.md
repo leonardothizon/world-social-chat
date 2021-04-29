@@ -1,13 +1,17 @@
-# World Social Chat
+# 💬 World Social Chat
 
-A concept of webchat project that uses Vue 3 Composition API and Tailwind CSS.
+A concept of webchat project that uses Vue 3 Composition API with Typescript and Tailwind CSS.
 
-## Project setup
+## Layout design (made on Figma)
+
+![](https://raw.githubusercontent.com/leonardothizon/world-social-chat/main/src/assets/layout.png)
+
+## 🔧 Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 🚀 Compiles and hot-reloads for development
 ```
 npm run serve
 ```

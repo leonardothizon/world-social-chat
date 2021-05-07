@@ -14,7 +14,7 @@
         :key="user.id"
         :user="user"
         :isCurrentUser="user.id === currentUserId"
-      />
+      />      
     </div>
     <div
       class="flex gap-2 items-center fixed bottom-16 lg:bottom-8 w-full px-4 outline-none"
